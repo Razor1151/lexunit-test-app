@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Lexunit próba feladat</title>
+</head>
+<body>
+    <div class="center">
+        <form action="/" method="POST" id="from" enctype="multipart/form-data">
+            <input type="file" name="content" id="content"><br>
+            <input type="number" step="0.01" min="0" name="treshold" id="treshold" placeholder="Különbözet értéke"><br>
+            <input type="submit" value="Klaszterezés"><br>
+        </form>
+
+        <div class="console">
+            {{ textResult }}
+            {% for value in result %}
+                {{value}}<br>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>
